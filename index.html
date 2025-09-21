@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lead | Where Insight Meets Impact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* light gray */
+            color: #111827; /* almost black */
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #d8b4fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-image: linear-gradient(#f9fafb, #f9fafb), linear-gradient(90deg, #3730a3, #7e22ce);
+        }
+        .btn-primary {
+            background-color: #f59e0b;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px #f59e0b66;
+            transform: translateY(-2px);
+            background-color: #f7b03a;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #d8b4fe; /* a light purple from gradient-text */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Container -->
+    <div class="min-h-screen">
+        
+        <!-- Header -->
+        <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/80">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <a href="#"><img src="https://thelead.io/wp-content/uploads/2019/11/lead-white-logo.png" alt="The Lead Logo" class="h-10 w-auto"></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-300 hover:text-white transition">Services</a>
+                    <a href="#courses" class="text-gray-300 hover:text-white transition">Courses</a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                </div>
+                <a href="#contact" class="hidden md:inline-block px-5 py-2 rounded-md font-semibold text-white btn-primary">
+                    Get In Touch
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-gray-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+                <a href="#services" class="block py-2 text-gray-300 hover:text-white">Services</a>
+                <a href="#courses" class="block py-2 text-gray-300 hover:text-white">Courses</a>
+                <a href="#about" class="block py-2 text-gray-300 hover:text-white">About</a>
+                <a href="#contact" class="block mt-2 py-2 text-center text-white font-semibold rounded-md btn-primary">Get In Touch</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-6 pt-32">
+            
+            <!-- Hero Section -->
+            <section class="text-center py-20 fade-in-section">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+                    Where <span class="gradient-text">Insight</span> Meets <span class="gradient-text">Impact</span>.
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+                    We empower your team with cutting-edge AI courses, transforming complex technologies into practical, accessible skills for sustainable growth. Discover the future of innovation with The Lead.
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#courses" class="px-8 py-3 rounded-md font-semibold text-white btn-primary">
+                        Explore Our Courses
+                    </a>
+                    <a href="#services" class="px-8 py-3 rounded-md font-semibold text-gray-700 gradient-border hover:text-black transition">
+                        View Services
+                    </a>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses" class="py-20 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Our Programs</h2>
+                    <p class="text-4xl font-bold mt-2">Explore Our Courses</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Course Card 1 -->
+                    <div class="card p-8 rounded-xl text-center flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">AI Agentic Automation</h3>
+                            <p class="text-gray-600 mb-6">Master workflow automation and build powerful AI agents with n8n.</p>
+                        </div>
+                        <a href="https://n8n.thelead.io/" target="_blank" rel="noopener noreferrer" class="inline-block mt-auto px-6 py-2 rounded-md font-semibold btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                    <!-- Course Card 2 -->
+                    <div class="card p-8 rounded-xl text-center flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">AI Vibe Coding</h3>
+                            <p class="text-gray-600 mb-6">Learn to code with AI, building stunning web applications with a modern stack.</p>
+                        </div>
+                        <a href="https://vibecoding.thelead.io/" target="_blank" rel="noopener noreferrer" class="inline-block mt-auto px-6 py-2 rounded-md font-semibold btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                    <!-- Course Card 3 -->
+                    <div class="card p-8 rounded-xl text-center flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">AI Data Analytics</h3>
+                            <p class="text-gray-600 mb-6">Unlock insights from your data using cutting-edge AI and analytics techniques.</p>
+                        </div>
+                        <a href="https://g.co/gemini/share/aaee5e8c3088" target="_blank" rel="noopener noreferrer" class="inline-block mt-auto px-6 py-2 rounded-md font-semibold btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                    <!-- Course Card 4 -->
+                    <div class="card p-8 rounded-xl text-center flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Data360</h3>
+                            <p class="text-gray-600 mb-6">A comprehensive approach to data, from collection and analysis to visualization.</p>
+                        </div>
+                        <a href="#" class="inline-block mt-auto px-6 py-2 rounded-md font-semibold btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Services Section -->
+            <section id="services" class="py-20 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Our Expertise</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="card p-8 rounded-xl">
+                        <div class="w-12 h-12 mb-4 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">AI Technical Training</h3>
+                        <p class="text-gray-600">We provide hands-on, in-depth training to equip your teams with the technical AI skills needed to innovate and excel.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="card p-8 rounded-xl">
+                        <div class="w-12 h-12 mb-4 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Customized Solutions</h3>
+                        <p class="text-gray-600">We develop bespoke AI training programs and solutions tailored to your specific industry challenges and business goals.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="card p-8 rounded-xl">
+                        <div class="w-12 h-12 mb-4 rounded-lg bg-pink-500/10 text-pink-500 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">80/20 Rule for Adoption</h3>
+                        <p class="text-gray-600">Our training focuses on the 20% of AI tools and techniques that deliver 80% of the impact, ensuring rapid adoption and immediate value.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Credentials Section -->
+            <section id="clients" class="py-20 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Trusted By</h2>
+                    <p class="text-4xl font-bold mt-2">Our Corporate Clients</p>
+                </div>
+                <div class="flex justify-center px-4">
+                    <img src="https://github.com/drhanlau/n8n-course/blob/main/Corporate%20clients.png?raw=true" alt="Corporate Clients" class="max-w-4xl w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </section>
+
+            <!-- HRDC Claimable Section -->
+            <section id="hrdc" class="py-20 fade-in-section bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                        <div class="md:w-1/3 flex justify-center">
+                            <img src="https://itsimple.com.my/wp-content/uploads/2023/07/HRD-Corp-pca6u0z0usjyayo1lgp16241zzyvncuyqwlhrbnqhc-removebg-preview.png" alt="HRD Corp Logo" class="max-w-xs w-full h-auto">
+                        </div>
+                        <div class="md:w-2/3 text-center md:text-left">
+                            <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Official Training Provider</h2>
+                            <p class="text-4xl font-bold mt-2">HRD Corp Claimable Courses</p>
+                            <p class="mt-4 text-lg text-gray-600">
+                                As a registered training provider under the Human Resource Development Corporation (HRD Corp), all our courses are fully claimable for eligible Malaysian companies. Invest in your team's future and leverage your HRD levy with our expert-led AI programs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="py-20 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Need Answers?</h2>
+                    <p class="text-4xl font-bold mt-2">Frequently Asked Questions</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">Are your courses HRD Corp claimable?</h3>
+                        <p class="mt-2 text-gray-600">Yes, absolutely. All our training programs are registered and fully claimable under the HRD Corp scheme. We can provide guidance and the necessary documentation to facilitate a smooth claim process for your company.</p>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">What skill level are the courses designed for?</h3>
+                        <p class="mt-2 text-gray-600">We cater to all levels. Courses like 'AI Agentic Automation' and 'AI Vibe Coding' are beginner-friendly with no prior experience required. We also offer advanced and customized workshops for seasoned professionals.</p>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">Can you customize training for our organization?</h3>
+                        <p class="mt-2 text-gray-600">Definitely. We excel at creating bespoke training solutions. We will work with you to understand your industry, challenges, and goals to design a curriculum that delivers maximum impact for your team.</p>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">What is the format of the training?</h3>
+                        <p class="mt-2 text-gray-600">We offer flexible training formats to suit your needs, including intensive in-person workshops, interactive live online classes, and hybrid models that combine the best of both worlds.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Credentials Section -->
+            <section id="credentials" class="py-20 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Our Track Record</h2>
+                    <p class="text-4xl font-bold mt-2">Proven Success in Numbers</p>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">In the past 10 years, we have trained and certified:</p>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
+                    <div class="card p-8 rounded-xl">
+                        <p class="text-5xl font-extrabold gradient-text">700+</p>
+                        <p class="mt-2 text-lg font-semibold">Data Scientists & Engineers</p>
+                    </div>
+                    <div class="card p-8 rounded-xl">
+                        <p class="text-5xl font-extrabold gradient-text">300+</p>
+                        <p class="mt-2 text-lg font-semibold">Full Stack Developers</p>
+                    </div>
+                    <div class="card p-8 rounded-xl">
+                        <p class="text-5xl font-extrabold gradient-text">300+</p>
+                        <p class="mt-2 text-lg font-semibold">AI Agents & Vibe Coding Participants</p>
+                    </div>
+                </div>
+
+                <!-- Images -->
+                <div class="mt-16 grid md:grid-cols-3 gap-8">
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                         <img src="https://raw.githubusercontent.com/drhanlau/n8n-course/refs/heads/main/photo-1552664730-d307ca884978.avif" alt="Training session" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                         <img src="https://github.com/drhanlau/n8n-course/blob/main/501008480_1271616571636352_1045940269974980193_n.jpg?raw=true" alt="Team collaboration" class="w-full h-64 object-cover">
+                    </div>
+                     <div class="overflow-hidden rounded-lg shadow-lg">
+                         <img src="https://github.com/drhanlau/n8n-course/blob/main/516791714_1309874321143910_2384036856029643188_n.jpg?raw=true" alt="Workshop discussion" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-20 fade-in-section">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Who We Are</h2>
+                    <p class="text-4xl font-bold mt-2">Data-Driven. Human-Centered.</p>
+                    <p class="mt-6 text-lg text-gray-600">
+                        The Lead was founded on a simple principle: the best results come from a deep understanding of both technology and people. We are a collective of expert educators and AI practitioners dedicated to demystifying artificial intelligence and fostering widespread adoption through targeted, impactful training.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Team Section -->
+            <section id="team" class="py-20 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Our Leadership</h2>
+                    <p class="text-4xl font-bold mt-2">Meet the Team</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Team Member 1 -->
+                    <div class="card p-6 text-center flex flex-col">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://pbs.twimg.com/profile_images/738570826291646464/EEH1StZS_400x400.jpg" alt="Dr. Lau Cher Han">
+                        <h3 class="mt-4 text-xl font-bold">Dr. Lau Cher Han</h3>
+                        <p class="mt-2 text-gray-600 text-sm flex-grow">Founder and CEO of TheLead. Chief Data Scientist, national AI advisor, and expert trainer in data science and automation.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="card p-6 text-center flex flex-col">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://www.kosmo.com.my/wp-content/uploads/2025/03/Warren_Leow.jpg123-1024x768.jpg" alt="Warren Leow">
+                        <h3 class="mt-4 text-xl font-bold">Warren Leow</h3>
+                        <p class="mt-2 text-gray-600 text-sm flex-grow">Founder of Supern8n, Co-founder of KAIN, and advisor to MED4IRN, with deep experience in scaling AI across industries.</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="card p-6 text-center flex flex-col">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://thelead.io/wp-content/uploads/2020/08/edmund-crop.png" alt="Edmund Hee">
+                        <h3 class="mt-4 text-xl font-bold">Edmund Hee</h3>
+                        <p class="mt-2 text-gray-600 text-sm flex-grow">CTO at Accio Technologies. Ex AI Officer at CIMB and Data Scientist at AirAsia.</p>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="card p-6 text-center flex flex-col">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://github.com/jeleowWMsdtseru/vibe-coding-landing-page/blob/main/Marcus%20chia.jpg?raw=true" alt="Marcus Chia">
+                        <h3 class="mt-4 text-xl font-bold">Marcus Chia</h3>
+                        <p class="mt-2 text-gray-600 text-sm flex-grow">AI UI/UX designer and expert in helping organizations adopt AI for operational efficiency. Specialist in no-code/low-code AI solutions and practical applications for business processes.</p>
+                    </div>
+                    <!-- Team Member 5 -->
+                    <div class="card p-6 text-center flex flex-col">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://jooymedia.com/wp-content/uploads/2023/09/Img_Meet-the-Co-Founder.jpg" alt="Daphne Chea">
+                        <h3 class="mt-4 text-xl font-bold">Daphne Chea</h3>
+                        <p class="mt-2 text-gray-600 text-sm flex-grow">A brand and communications specialist with 17+ years of experience in high-impact PR initiatives in media and entertainment industry, with a focus on content IP creation and development for TV and digital platforms in financial education.</p>
+                    </div>
+                    <!-- Team Member 6 -->
+                    <div class="card p-6 text-center flex flex-col">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://yyc.asia/wp-content/uploads/2024/03/Wei-Khjan-PhotoRoom.png-PhotoRoom-400x400.png" alt="Chan Wei Khjan">
+                        <h3 class="mt-4 text-xl font-bold">Chan Wei Khjan</h3>
+                        <p class="mt-2 text-gray-600 text-sm flex-grow">Wei Khjan is an ACCA Graduate with a strong background in finance and accounting. He holds multiple professional memberships including ACCA, C.A.(M), FCA (Singapore) and ASEAN CPA.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <section id="contact" class="py-20 fade-in-section">
+                 <div class="text-center p-12 rounded-xl gradient-border bg-white">
+                     <h2 class="text-4xl font-bold">Ready to lead the conversation?</h2>
+                     <p class="mt-4 max-w-xl mx-auto text-gray-600">Let's discuss how we can elevate your brand and achieve your goals. The first step is a conversation.</p>
+                     <div class="mt-8">
+                         <a href="mailto:hello@thelead.io" class="px-8 py-3 rounded-md font-semibold text-white btn-primary">
+                             Start a Project
+                         </a>
+                     </div>
+                 </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-200 mt-20">
+            <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+                <p>&copy; 2025 The LEAD by UCAN Technologies Sdn Bhd (1207802-V) 2024. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/15557074708" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-transform transform hover:scale-110 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.13l-1.107 4.054 4.144-1.085z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Simple fade-in on scroll animation
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: unobserve after it's visible
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Initialize first section visibility
+        if (sections.length > 0) {
+            sections[0].classList.add('is-visible');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
