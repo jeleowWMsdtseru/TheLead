@@ -349,24 +349,58 @@
                 </div>
             </section>
             
-            <!-- CTA Section -->
+            <!-- Contact Form Section -->
             <section id="contact" class="py-20 fade-in-section">
-                 <div class="text-center p-12 rounded-xl gradient-border bg-white">
-                     <h2 class="text-4xl font-bold">Ready to lead the conversation?</h2>
-                     <p class="mt-4 max-w-xl mx-auto text-gray-600">Let's discuss how we can elevate your brand and achieve your goals. The first step is a conversation.</p>
-                     <div class="mt-8">
-                         <a href="mailto:hello@thelead.io" class="px-8 py-3 rounded-md font-semibold text-white btn-primary">
-                             Start a Project
-                         </a>
-                     </div>
-                 </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-sm font-bold uppercase tracking-widest gradient-text">Get In Touch</h2>
+                        <p class="text-4xl font-bold mt-2">Contact Us</p>
+                        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                            Have a question or want to start a project? Fill out the form below and we'll get back to you shortly.
+                        </p>
+                    </div>
+                    <div class="card p-8 md:p-12 rounded-xl">
+                        <form id="contact-form">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                    <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <label for="interest" class="block text-sm font-medium text-gray-700">I'm interested in...</label>
+                                <select id="interest" name="interest" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+                                    <option>AI Agentic Automation Course</option>
+                                    <option>AI Vibe Coding Course</option>
+                                    <option>AI Data Analytics Course</option>
+                                    <option>Data360 Course</option>
+                                    <option>Customized Corporate Training</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mt-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                            </div>
+                            <div class="mt-8 text-center">
+                                <button type="submit" class="px-10 py-4 rounded-md font-semibold text-white btn-primary text-lg">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </section>
         </main>
 
         <!-- Footer -->
         <footer class="border-t border-gray-200 mt-20">
             <div class="container mx-auto px-6 py-8 text-center text-gray-500">
-                <p>&copy; 2025 The LEAD by UCAN Technologies Sdn Bhd (1207802-V) 2024. All rights reserved.</p>
+                <p>&copy; 2025 The LEAD by UCAN Technologies Sdn Bhd (1207802-V). All rights reserved.</p>
             </div>
         </footer>
     </div>
@@ -408,14 +442,34 @@
         if (sections.length > 0) {
             sections[0].classList.add('is-visible');
         }
+
+        // Contact form handler
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const interest = document.getElementById('interest').value;
+                const message = document.getElementById('message').value;
+
+                const to = 'chelsea@thelead.io';
+                const bcc = 'laucherhan@gmail.com,jeleow@gmail.com';
+                const subject = `New Inquiry from ${name} - ${interest}`;
+                
+                let body = `You have a new inquiry from the website contact form:\n\n`;
+                body += `Name: ${name}\n`;
+                body += `Email: ${email}\n`;
+                body += `Interest: ${interest}\n\n`;
+                body += `Message:\n${message}\n`;
+
+                const mailtoLink = `mailto:${to}?bcc=${bcc}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+                window.location.href = mailtoLink;
+            });
+        }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
 
